@@ -2,7 +2,6 @@ main:
 
   - title: Comparative Knowledge Distillation
     authors: Alex Wilf, <strong>Alex Tianyi Xu</strong>, Paul Pu Liang, Alexander Obolenskiy, Daniel Fried, Louis-Philippe Morency
-    conference_short: arxiv
     conference: 2023.
     pdf: https://arxiv.org/pdf/2311.02253.pdf
     code: https://github.com/alextxu/ckd
