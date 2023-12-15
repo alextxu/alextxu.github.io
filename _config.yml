@@ -20,7 +20,7 @@ twitter: https://twitter.com/
 
 # Images (e.g., your profile picture and your website's favicon) 
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/img/https://media.licdn.com/dms/image/C5603AQGm001N0PMCig/profile-displayphoto-shrink_200_200/0/1655782204676?e=1707955200&v=beta&t=fwV1UWZsB1J8qEH4VQINarhlgmFA55bwomjFtmIRKdw
+avatar: ./assets/img/avatar.png
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 
