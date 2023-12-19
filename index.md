@@ -4,7 +4,9 @@ layout: homepage
 
 ## About Me
 
-I am a senior undergraduate student at Carnegie Mellon University majoring in Artificial Intelligence.
+I am a senior undergraduate student at Carnegie Mellon University majoring in Artificial Intelligence. I am currently applying for PhD programs for the Fall 2024 admission cycle.
+
+I am currently working with Professor Louis-Philippe Morency's MultiComp Lab on a low-resource knowledge distillation project. Previously, I worked on a social norms modeling project with Professor Reid Simmons, where we tracked social norms violations in real-time in realistic applications with reinforcement learning agents.
 
 ## Research Interests
 
