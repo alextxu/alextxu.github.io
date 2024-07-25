@@ -4,9 +4,9 @@ layout: homepage
 
 ## About Me
 
-I am a senior undergraduate student at Carnegie Mellon University majoring in Artificial Intelligence. I am currently applying for PhD programs for the Fall 2024 admission cycle.
+I am a Computer Science Master's student at Carnegie Mellon University, advised by Professor Reid Simmons. I am part of the Reliable Autonomous Systems Lab (RASL).
 
-I am currently working with Professor Louis-Philippe Morency's MultiComp Lab on a low-resource knowledge distillation project. Previously, I worked on a social norms modeling project with Professor Reid Simmons, where we tracked social norms violations in real-time in realistic applications with reinforcement learning agents.
+I am also currently working with Professor Chenyan Xiong on a retrieval augmented generation (RAG) project. Previously, I was fortunate to work with Professor Louis-Philippe Morency's MultiComp Lab on a low-resource knowledge distillation project. Before that, I have also worked on a social norms modeling project with RASL, where we tracked social norms violations in real-time in realistic applications with reinforcement learning agents.
 
 ## Research Interests
 
