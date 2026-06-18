@@ -1,0 +1,61 @@
+{% comment %}
+  Renders one city as a row: name on the left, a faded fan of photos
+  on the right, and the full photo set (hidden) for the window viewer.
+  Params:
+    include.photos     – array of static_file objects (sorted)
+    include.album      – the entry from _data/albums.yml (declared albums only)
+    include.auto_title – fallback title for undeclared folders
+    include.album_no   – 1-based index for the "01" label
+{% endcomment %}
+
+{% assign atitle = include.album.title | default: include.auto_title %}
+{% assign adesc  = include.album.description %}
+{% assign count  = include.photos.size %}
+{% assign fan    = include.photos | slice: 0, 4 %}
+{% assign extras = include.photos | slice: 4, 3 %}
+
+<button class="album-row" type="button" data-title="{{ atitle | escape }}" aria-label="Open {{ atitle | escape }}">
+  <div class="row-ghost" aria-hidden="true">{{ atitle }}</div>
+  <div class="row-name">
+    <div class="row-no">{% if include.album_no < 10 %}0{% endif %}{{ include.album_no }} &nbsp;·&nbsp; {{ count }} {% if count == 1 %}photo{% else %}photos{% endif %}</div>
+    <div class="row-city">{{ atitle }}</div>
+    {% if adesc %}<div class="row-desc">{{ adesc }}</div>{% endif %}
+    <div class="row-view">View &rarr;</div>
+  </div>
+
+  <div class="fan" aria-hidden="true">
+    <div class="row-geo">
+      <svg class="geo-mark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+        <circle cx="50" cy="50" r="32" opacity="0.55"/>
+        <circle cx="50" cy="50" r="20" opacity="0.28"/>
+        <line x1="50" y1="3" x2="50" y2="26"/>
+        <line x1="50" y1="74" x2="50" y2="97"/>
+        <line x1="3" y1="50" x2="26" y2="50"/>
+        <line x1="74" y1="50" x2="97" y2="50"/>
+        <circle cx="50" cy="50" r="2.4" fill="currentColor" stroke="none"/>
+        <path d="M50 11 l5 12 h-10 z" fill="currentColor" stroke="none"/>
+      </svg>
+      {% if include.album.coords %}<div class="geo-coords">{{ include.album.coords }}</div>{% endif %}
+      <div class="geo-meta">{% if include.album.period %}{{ include.album.period }} &middot; {% endif %}{{ count }} {% if count == 1 %}frame{% else %}frames{% endif %}</div>
+    </div>
+
+    {% for photo in fan %}
+      <span class="fan-photo" style="--i: {{ forloop.index0 }}">
+        <img src="{{ photo.path | relative_url }}" alt="" loading="lazy">
+      </span>
+    {% endfor %}
+    {% for photo in extras %}
+      <span class="fan-photo is-extra" style="--i: 3; --peek-x: {{ forloop.index | times: 16 }}px; --peek-y: {{ forloop.index | times: 9 }}px; --peek-r: {{ forloop.index | times: 2.5 }}deg; --z: {{ 16 | minus: forloop.index0 }};">
+        <img src="{{ photo.path | relative_url }}" alt="" loading="lazy">
+      </span>
+    {% endfor %}
+  </div>
+
+  {% comment %} full photo set the viewer reads on open {% endcomment %}
+  <div class="album-data" hidden>
+    {% for photo in include.photos %}
+      {% assign cap = site.data.photos[photo.basename] %}
+      <a data-full="{{ photo.path | relative_url }}" data-t="{{ cap.title | escape }}" data-l="{{ cap.location | escape }}"></a>
+    {% endfor %}
+  </div>
+</button>

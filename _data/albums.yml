@@ -1,0 +1,31 @@
+# ─────────────────────────────────────────────────────────────
+#  PHOTOGRAPHY ALBUMS  (one per city)
+#
+#  Each album is a folder of images inside  images/photos/<slug>/
+#  List them here in the ORDER they should appear down the page.
+#
+#  slug         folder name under images/photos/  (required, must match)
+#  title        city name shown on the left
+#  description  short line under the name (optional)
+#  coords       GPS coordinates shown by the crosshair mark (optional)
+#  period       small caption beside the frame count, e.g. a season/year (optional)
+#
+#  To add a city:
+#    1. create  images/photos/<slug>/  and drop your photos in
+#    2. add an entry below
+#
+#  Any folder not listed here still appears, at the end, using a
+#  title generated from its folder name.
+# ─────────────────────────────────────────────────────────────
+
+- slug: toronto
+  title: Toronto
+  description: The city by the lake, after dark.
+  coords: 43.6532° N, 79.3832° W
+  period: Winter 2023
+
+- slug: nyc
+  title: New York
+  description: Steam, steel, and restless streets.
+  coords: 40.7128° N, 74.0060° W
+  period: Spring 2024

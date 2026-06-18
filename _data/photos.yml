@@ -1,0 +1,43 @@
+# Optional captions for the photography gallery.
+# Key each entry by the image's filename WITHOUT extension (its "basename").
+# Both fields are optional — omit a photo entirely to show it with no caption.
+# Captions appear in the photo viewer (title in white, location below).
+#
+# Example:
+#   toronto-1:
+#     title: City of Lights
+#     location: Toronto, Canada
+
+# ── Toronto ──
+toronto-1:
+  title: Streetcar Weather
+  location: Downtown Toronto
+toronto-2:
+  title: The Flatiron Mural
+  location: Old Town, Toronto
+toronto-3:
+  title: Guinness Time
+  location: Colborne Street, Toronto
+toronto-4:
+  title: After Dark
+  location: Financial District, Toronto
+
+# ── New York ──
+nyc-1:
+  title: Times Square in the Rain
+  location: Times Square, New York
+nyc-2:
+  title: Spring Blossoms
+  location: Manhattan, New York
+nyc-3:
+  title: Dusk Over the Hudson
+  location: Lower Manhattan, New York
+nyc-4:
+  title: The East River Bridges
+  location: Lower Manhattan, New York
+nyc-5:
+  title: Inside the Oculus
+  location: World Trade Center, New York
+nyc-6:
+  title: Stairs of Light
+  location: Lower Manhattan, New York
