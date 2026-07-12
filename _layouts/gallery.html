@@ -236,11 +236,37 @@
       }
 
       @media (max-width: 760px) {
-        .album-row { flex-direction: column; align-items: flex-start; gap: 1.6rem; }
-        .fan { width: 100%; }
+        .topbar { font-size: 0.62rem; letter-spacing: 0.16em; padding: 1rem 1.2rem; }
+
+        .album-row {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 1.1rem;
+          padding: 2.4rem clamp(1rem, 5vw, 2rem);
+        }
         .row-name { min-width: 0; }
-        .row-geo { display: none; }
-        .row-ghost { display: none; }
+        .row-geo, .row-ghost { display: none; }
+        /* no hover on touch — always show the affordance */
+        .row-view { opacity: 1; transform: none; color: var(--muted); }
+
+        /* replace the hover-fan with a single tappable cover photo */
+        .fan { width: 100%; height: auto; perspective: none; }
+        .fan-photo {
+          position: relative;
+          top: auto; left: auto; right: auto;
+          width: 100%; height: auto;
+          aspect-ratio: 4 / 3;
+          margin: 0;
+          opacity: 1;
+          transform: none !important;
+          filter: none !important;
+          transition: none;
+        }
+        .fan-photo ~ .fan-photo { display: none; }   /* only the cover */
+      }
+
+      @media (max-width: 560px) {
+        .topbar span { display: none; }   /* motto would collide with the name */
       }
 
       .empty-note {
