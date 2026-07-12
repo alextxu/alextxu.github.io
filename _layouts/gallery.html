@@ -257,6 +257,9 @@
           width: 100%; height: auto;
           aspect-ratio: 4 / 3;
           margin: 0;
+          padding: 0;                       /* clean full-bleed cover, no mat */
+          background: transparent;
+          box-shadow: 0 12px 30px rgba(0,0,0,0.5);
           opacity: 1;
           transform: none !important;
           filter: none !important;
@@ -515,6 +518,21 @@
           else if (e.key === 'ArrowRight') show(current + 1);
           else if (e.key === 'ArrowLeft') show(current - 1);
         });
+
+        /* swipe left / right to page through photos on touch */
+        var stage = document.querySelector('.vw-stage');
+        var tsx = 0, tsy = 0, tsMoved = false;
+        stage.addEventListener('touchstart', function (e) {
+          tsx = e.changedTouches[0].clientX; tsy = e.changedTouches[0].clientY; tsMoved = true;
+        }, { passive: true });
+        stage.addEventListener('touchend', function (e) {
+          if (!tsMoved) return; tsMoved = false;
+          var dx = e.changedTouches[0].clientX - tsx;
+          var dy = e.changedTouches[0].clientY - tsy;
+          if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+            show(current + (dx < 0 ? 1 : -1));
+          }
+        }, { passive: true });
       })();
     </script>
   </body>
